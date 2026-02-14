@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Chart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.svg" type="image/x-icon">
+</head>
+<body>
+    
+    <header>
+        <h1>Weight Chart</h1>
+    </header>
+
+    <main>
+
+        <div id="add-weight">
+            <div id="user-info">
+                <label>Date: </label>
+                <input type="date" id="date" ><br>
+                <label>Weight: </label>
+                <input type="number" id="weight" min="0"
+                placeholder="KG">
+            </div>
+            <button id="save" onclick="addData()">Save</button>
+        </div>
+
+        <table id="table">
+            <tr>
+                <th>Date</th>
+                <th>Weight (Kgs)</th>
+            </tr>
+
+            <tr>
+                <td>14-02-2026</td>
+                <td>88.75</td>
+            </tr>
+            <tr>
+                <td>14-02-2026</td>
+                <td>88.75</td>
+            </tr>
+        </table>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
