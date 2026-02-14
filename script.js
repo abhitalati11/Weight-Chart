@@ -22,9 +22,3 @@ function addData(){
 
 }
 
-
-git init 
-git remote add origin "https://github.com/abhitalati11/Weight-Chart.git"
-git branch -M main
-git commit -m "trail"
-git push -u origin main
