@@ -1,0 +1,11 @@
+const tr = document.createElement('tr');
+const date = document.createElement('td');
+const weight = document.createElement('td');
+date.textContent = realdata[i].date;
+weight.textContent = realdata[i].weight;
+tr.appendChild(date);
+tr.appendChild(weight);
+table.appendChild(tr);
+
+
+onclick="addData()"
