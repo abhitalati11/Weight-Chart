@@ -14,11 +14,14 @@ if(rawdata != null){
     const realdata = JSON.parse(rawdata);
     console.log(realdata);
 
+    let length = realdata.length;
+    console.log(length);
+    
     for(let i = 0 ; i < realdata.length ; i++){
-        makeCards(realdata[i].date , realdata[i].weight);
+        showCards(realdata[i].date , realdata[i].weight);
     }
     
-    function makeCards(realdate , realweight){
+    function showCards(realdate , realweight){
         const tr = document.createElement('tr');
         const date = document.createElement('td');
         const weight = document.createElement('td');
@@ -29,14 +32,27 @@ if(rawdata != null){
         tr.appendChild(weight);
 
         table.appendChild(tr);
+    }
 
+    function addCardData(realdate , realweight){
+        const newdata = {w_id: length + 1, date:realdate, weight: realweight};
+        console.log(newdata);
+
+        realdata.push(newdata);
+        console.log(realdata);
+
+        const uploadData = JSON.stringify(realdata);
+        localStorage.clear();
+        console.log(uploadData);
+        localStorage.setItem("Data" , uploadData);
     }
 
     save.onclick = function(){
     const dateEntered = document.getElementById("date").value;
     const weightEnterd = document.getElementById("weight").value;
     (dateEntered == null || weightEnterd == null || weightEnterd == ""
-    ) ? alert("Enter Fields properly!!") : addingData();
+    ) ? alert("Enter Fields properly!!") : addCardData(dateEntered , weightEnterd) , showCards(dateEntered , weightEnterd);
+
 
     }
     
