@@ -40,5 +40,12 @@
     </main>
 
     <script src="app.js"></script>
+    <script>
+        if('serviceWorker' in navigator){
+            navigator.serviceWorker.register('/serviceWorker.js')
+            .then(()=>console.log("service-worker registered!!"))
+            .catch((error)=>console.log("service worker failed",error));
+        }
+    </script>
 </body>
 </html>
