@@ -25,9 +25,17 @@ if(rawdata != null){
         const tr = document.createElement('tr');
         const date = document.createElement('td');
         const weight = document.createElement('td');
+        const deletBtn = document.createElement('button');
+        deletBtn.id = "dltBtn";
+        const weightLbl = document.createElement('lable');
+        weight.id = 'weightTD';
+        deletBtn.textContent = "Delete";
+        weight.appendChild(weightLbl);
+        weight.appendChild(deletBtn);
+
 
         date.textContent = realdate;
-        weight.textContent = realweight;
+        weightLbl.textContent = realweight;
         tr.appendChild(date);
         tr.appendChild(weight);
 
@@ -53,9 +61,8 @@ if(rawdata != null){
     (dateEntered == null || weightEnterd == null || weightEnterd == ""
     ) ? alert("Enter Fields properly!!") : addCardData(dateEntered , weightEnterd) , showCards(dateEntered , weightEnterd);
 
-
+    clearInput();
     }
-    
 }
 else{
     save.onclick = function (){
@@ -71,17 +78,37 @@ else{
         const localdata = JSON.stringify(data);
         //console.log(localdata);
         localStorage.setItem("Data" , localdata);
-
         const tr = document.createElement('tr');
         const date = document.createElement('td');
         const weight = document.createElement('td');
+        const deletBtn = document.createElement('button');
+        deletBtn.id = "dltBtn";
+        const weightLbl = document.createElement('lable');
+        weight.id = 'weightTD';
+        deletBtn.textContent = "Delete";
+        weight.appendChild(weightLbl);
+        weight.appendChild(deletBtn);
 
         date.textContent = dateEntered;
-        weight.textContent = weightEnterd;
+        weightLbl.textContent = weightEnterd;
         tr.appendChild(date);
         tr.appendChild(weight);
 
         table.appendChild(tr);
     }
+    clearInput();
 }
 }
+
+// clearing input fields
+
+function clearInput(){
+    document.querySelector("#date").value = "";
+    document.querySelector("#weight").value = "";
+}
+
+// taking menu button and making menu 
+
+document.querySelector("#icon").addEventListener("click" , ()=>{
+    console.log("hello menu open");
+})

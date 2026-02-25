@@ -13,9 +13,13 @@
     
     <header>
         <h1>Weight Chart</h1>
-        <div id="icon">
+        <button id="icon" class="dropdown">
             <span class="material-symbols-outlined">menu</span>
+            <div class="content">
+                <a href="#">Graph</a>
+                <a href="#">coming soon..</a>
         </div>
+        </button>
     </header>
 
     <main>
@@ -23,10 +27,10 @@
         <form id="add-weight">
             <div id="user-info">
                 <label>Date: </label>
-                <input type="date" id="date" required><br>
+                <input type="date" id="date" ><br>
                 <label>Weight: </label>
                 <input type="float" id="weight" step="any" min="0"
-                placeholder="KG" required>
+                placeholder="KG" >
             </div>
             <button id="save" >Save</button>
         </from>
@@ -40,12 +44,12 @@
     </main>
 
     <script src="app.js"></script>
-    <script>
+    <!-- <script>
         if('serviceWorker' in navigator){
             navigator.serviceWorker.register('/serviceWorker.js')
             .then(()=>console.log("service-worker registered!!"))
             .catch((error)=>console.log("service worker failed",error));
         }
-    </script>
+    </script> -->
 </body>
 </html>

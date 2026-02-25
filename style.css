@@ -4,8 +4,43 @@ header{
     justify-content: space-around;
 }
 
+#icon{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.content{
+    display: none;
+    border: 1px solid black;
+    background-color: rgba(199, 199, 199 , 0.3);
+}
+
+.content a{
+    display: block;
+    text-align: start;
+    color: black;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 8px;
+    width: 90px;
+}
+
+.dropdown .content{
+    position: absolute;
+}
+
+#icon:hover .content{
+    display: block;
+}
+
 main{
     height: 97vh;
+}
+
+#save{
+    font-size: 0.9rem;
+    cursor: pointer;
 }
 
 table{
@@ -17,6 +52,12 @@ tr , td , th{
     border: 1px solid black;
     padding: 10px;
     text-align: center;
+}
+
+#weightTD{
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
 }
 
 #add-weight{
@@ -31,5 +72,12 @@ tr , td , th{
 
     label , button , input{
         margin: 10px;
+    }
+    #dltBtn{
+        font-size: 0.9rem;
+        padding: 0.5rem 0.6rem 0.5rem 0.6rem;
+        border-radius: 10px;
+        border: 1px solid black;
+        cursor: pointer;
     }
 }
